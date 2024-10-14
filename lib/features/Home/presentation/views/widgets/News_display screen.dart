@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:userapp/core/utils/app_colors.dart';
 import 'package:userapp/features/Home/data/models/category_model.dart';
-import 'package:userapp/features/Home/presentation/views/news_details%20_screen.dart';
 import 'package:userapp/features/Home/presentation/views/widgets/home/home_screen.dart';
 
 import '../../../data/models/new_model.dart';
@@ -40,11 +39,7 @@ class _CategoryNewsScreenState extends State<CategoryNewsScreen> {
         ),
 
         body: GestureDetector(
-          onTap: (){
-            Navigator.push(context, MaterialPageRoute(builder: (c){
-              return DetailsNewsScreen();
-            }));
-          },
+
           child: BlocConsumer<TopHeadlineCubit,TopHeadlineStates>(
               listener: (context,state){
                 if(state is GetTopHeadlineFailureStates){
